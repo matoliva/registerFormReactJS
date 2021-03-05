@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__birth {
+    display: flex;
+}
+
+.form__birth__select {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin-right: 0.6em;
+}
+
+.form__btn-submit {
+    margin-top: 1em;
+}
