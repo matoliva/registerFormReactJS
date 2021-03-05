@@ -1,6 +1,28 @@
 import { useState } from "react";
+import styled from "styled-components";
 
-import './registerForm.css';
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const FormBirthContainer = styled.div`
+    display: flex;
+`;
+
+const FormBirthSelect = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin-right: 0.6em;
+`;
+
+const Button = styled.button`
+    margin-top: 1em;
+`;
 
 const RegisterForm = () => {
 
@@ -119,7 +141,7 @@ const RegisterForm = () => {
     }
 
     return (
-        <form className="form">
+        <Form className="form">
             <label htmlFor="lastName"> Last Name: </label>
             <input
                 name="lastName"
@@ -152,19 +174,19 @@ const RegisterForm = () => {
                 value={fields["emailVerification"]}
                 required />
             <span style={{ color: "red" }}>{errors["emailVerification"]}</span>
-            <div className="form__birth">
-                <div className="form__birth__select">
+            <FormBirthContainer>
+                <FormBirthSelect>
                     <label htmlFor="day">Day: </label>
                     <select
                         value={fields.day}
                         name="day"
                         type="text"
                         onChange={handleInputChange}
-                        >
+                    >
                         {createDaysOfTheMonthOptions()}
                     </select>
-                </div>
-                <div className="form__birth__select">
+                </FormBirthSelect>
+                <FormBirthSelect>
                     <label htmlFor="month">Month: </label>
                     <select
                         value={fields.month}
@@ -173,8 +195,8 @@ const RegisterForm = () => {
                         onChange={handleInputChange}>
                         {createMonthsOptions()}
                     </select>
-                </div>
-                <div className="form__birth__select">
+                </FormBirthSelect>
+                <FormBirthSelect>
                     <label htmlFor="year">Year: </label>
                     <select
                         value={fields.year}
@@ -183,16 +205,15 @@ const RegisterForm = () => {
                         onChange={handleInputChange}>
                         {createYearsOptions()}
                     </select>
-                </div>
-            </div>
-            <button
-                className="form__btn-submit"
+                </FormBirthSelect>
+            </FormBirthContainer>
+            <Button
                 name="register"
                 type="submit"
                 onClick={handleSubmit}
             >Register
-            </button>
-        </form>
+            </Button>
+        </Form>
     )
 };
 
