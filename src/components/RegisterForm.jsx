@@ -5,10 +5,10 @@ import './registerForm.css';
 const RegisterForm = () => {
 
     const [fields, setFields] = useState({
-        name: null,
-        lastName: null,
-        email: null,
-        emailVerification: null,
+        name: '',
+        lastName: '',
+        email: '',
+        emailVerification: '',
         day: 1,
         month: 1,
         year: 1900
@@ -125,6 +125,7 @@ const RegisterForm = () => {
                 name="lastName"
                 type="text"
                 onChange={handleInputChange}
+                value={fields["lastName"]}
                 required />
             <span style={{ color: "red" }}>{errors["lastName"]}</span>
             <label htmlFor="name"> Name: </label>
@@ -132,6 +133,7 @@ const RegisterForm = () => {
                 name="name"
                 type="text"
                 onChange={handleInputChange}
+                value={fields["name"]}
                 required />
             <span style={{ color: "red" }}>{errors["name"]}</span>
             <label htmlFor="email">Email: </label>
@@ -139,6 +141,7 @@ const RegisterForm = () => {
                 name="email"
                 type="email"
                 onChange={handleInputChange}
+                value={fields["email"]}
                 required />
             <span style={{ color: "red" }}>{errors["email"]}</span>
             <label htmlFor="emailVerification">Repeat Email: </label>
@@ -146,6 +149,7 @@ const RegisterForm = () => {
                 name="emailVerification"
                 type="email"
                 onChange={handleInputChange}
+                value={fields["emailVerification"]}
                 required />
             <span style={{ color: "red" }}>{errors["emailVerification"]}</span>
             <div className="form__birth">
@@ -155,7 +159,8 @@ const RegisterForm = () => {
                         value={fields.day}
                         name="day"
                         type="text"
-                        onChange={handleInputChange}>
+                        onChange={handleInputChange}
+                        >
                         {createDaysOfTheMonthOptions()}
                     </select>
                 </div>
