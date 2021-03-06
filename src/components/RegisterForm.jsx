@@ -18,6 +18,9 @@ const FormBirthSelect = styled.div`
 
     align-items: center;
     margin-right: 0.6em;
+    &:last-child {
+        margin-right: 0;
+    }
 `;
 
 const Button = styled.button`
